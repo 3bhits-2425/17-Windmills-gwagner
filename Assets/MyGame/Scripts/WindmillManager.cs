@@ -18,6 +18,7 @@ public class WindmillGameManager : MonoBehaviour
         locked = new bool[windmills.Length];
         FindWindmillComponents();
     }
+
     private void FindWindmillComponents()
     {
         foreach (GameObject windmill in windmills)
@@ -32,7 +33,6 @@ public class WindmillGameManager : MonoBehaviour
                 Debug.LogError($"WindmillDynamicSpeed nicht gefunden auf {windmill.name}");
             }
 
-            // Button im Canvas finden
             Button button = windmill.GetComponentInChildren<Canvas>()?.GetComponentInChildren<Button>();
             if (button != null)
             {
@@ -45,7 +45,6 @@ public class WindmillGameManager : MonoBehaviour
             }
         }
     }
-
 
     private void Start()
     {
@@ -60,19 +59,15 @@ public class WindmillGameManager : MonoBehaviour
         EnableCurrentWindmill();
     }
 
-
-
     private void EnableCurrentWindmill()
     {
         for (int i = 0; i < windmillScripts.Count; i++)
         {
-            // Nur die aktuelle Windmühle aktivieren, alle anderen deaktivieren
             windmillScripts[i].enabled = (i == currentIndex);
         }
 
         Debug.Log($"Windmühle {currentIndex} aktiviert.");
     }
-
 
     private void LockWindmill(int index)
     {
@@ -84,6 +79,12 @@ public class WindmillGameManager : MonoBehaviour
             Debug.Log($"Windmühle {index} gesperrt");
             UpdateColor();
             lockButtons[index].interactable = false;
+
+            // Nach dem Sperren Slider-Wert und Geschwindigkeit einfrieren
+            if (windmillSliders[index] != null)
+            {
+                windmillSliders[index].interactable = false;
+            }
 
             currentIndex++;
             Debug.Log($"Neuer currentIndex: {currentIndex}");
@@ -98,17 +99,12 @@ public class WindmillGameManager : MonoBehaviour
         }
     }
 
-
-
-
     private void UpdateColor()
     {
-        // Get the normalized speed for each windmill
         float r = currentIndex >= 0 ? windmillScripts[0].GetNormalizedSpeed() : 0;
         float g = currentIndex >= 1 ? windmillScripts[1].GetNormalizedSpeed() : 0;
         float b = currentIndex >= 2 ? windmillScripts[2].GetNormalizedSpeed() : 0;
 
-        // Update color
         Color newColor = new Color(r, g, b);
         colorTarget.GetComponent<Renderer>().material.color = newColor;
     }

@@ -2399,51 +2399,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761167753}
   m_CullTransparentMesh: 1
---- !u!1 &790001751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 790001753}
-  - component: {fileID: 790001752}
-  m_Layer: 0
-  m_Name: LogInput
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &790001752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790001751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94379e4104b515847bb3f5b86ef82aeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyInput: {fileID: 0}
---- !u!4 &790001753
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 790001751}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.837563, y: 3.2764993, z: 2.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &793171511
 GameObject:
   m_ObjectHideFlags: 0
@@ -4290,10 +4245,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1511901400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56566723e45d8e843a38c0260e715b97, type: 3}
+  m_Script: {fileID: 11500000, guid: 13d23d4b8283edb408e60dcaf829f8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
 --- !u!1 &1519996931
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,6 +4496,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558781129}
   - component: {fileID: 1558781130}
+  - component: {fileID: 1558781131}
   m_Layer: 0
   m_Name: RotorHub
   m_TagString: Untagged
@@ -4584,6 +4539,18 @@ MonoBehaviour:
   maxRotationSpeed: 255
   acceleration: 50
   deceleration: 30
+--- !u!114 &1558781131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558781128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d23d4b8283edb408e60dcaf829f8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1572051470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6347,6 +6314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2129420141}
   - component: {fileID: 2129420142}
+  - component: {fileID: 2129420143}
   m_Layer: 0
   m_Name: RotorHub
   m_TagString: Untagged
@@ -6389,6 +6357,18 @@ MonoBehaviour:
   maxRotationSpeed: 255
   acceleration: 50
   deceleration: 30
+--- !u!114 &2129420143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129420140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d23d4b8283edb408e60dcaf829f8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6398,7 +6378,6 @@ SceneRoots:
   - {fileID: 1361055962}
   - {fileID: 1579448354}
   - {fileID: 207551625}
-  - {fileID: 790001753}
   - {fileID: 1660411939}
   - {fileID: 190045205}
   - {fileID: 1492957450}
