@@ -3,48 +3,81 @@ using UnityEngine.UI;
 
 public class WindmillDynamicSpeed : MonoBehaviour
 {
-    [SerializeField] private Light lampLight; // Assign in Inspector
-    [SerializeField] private float maxLightIntensity = 1f; // Maximum lamp brightness
-    [SerializeField] private Slider speedSlider; // Assign in Inspector
-    public float maxRotationSpeed = 300f; // Maximum speed
-    [SerializeField] private float acceleration = 50f; // Speed increase per second
-    [SerializeField] private float deceleration = 30f; // Speed decrease per second
-    private float currentSpeed = 0f; // Current rotation speed
+    [SerializeField] private Light lampLight;
+    [SerializeField] private float maxLightIntensity = 1f;
+    [SerializeField] private Slider speedSlider;
+    public float maxRotationSpeed = 300f;
+    [SerializeField] private float acceleration = 50f;
+    [SerializeField] private float deceleration = 30f;
+    private float currentSpeed = 0f;
+    private bool isLocked = false;
 
     private void Update()
     {
-        // Holding Space increases rotation speed
-        if (Input.GetKey(KeyCode.Space))
+        if (!isLocked)
         {
-            currentSpeed += acceleration * Time.deltaTime;
-        }
-        else
-        {
-            // Slowly reduce speed when Space is not pressed
-            currentSpeed -= deceleration * Time.deltaTime;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                currentSpeed += acceleration * Time.deltaTime;
+            }
+            else
+            {
+                currentSpeed -= deceleration * Time.deltaTime;
+            }
+
+            currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxRotationSpeed);
+
+            if (speedSlider != null)
+            {
+                speedSlider.value = Mathf.Round(currentSpeed);
+            }
         }
 
-        // Clamp speed between 0 and maxRotationSpeed
-        currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxRotationSpeed);
-
-        // Rotate the rotor hub
+        // Windmill keeps rotating at the current speed, even when locked
         transform.Rotate(Vector3.forward * currentSpeed * Time.deltaTime);
 
+        if (lampLight != null)
+        {
+            lampLight.intensity = Mathf.Lerp(0f, maxLightIntensity, currentSpeed / maxRotationSpeed);
+        }
+    }
+
+    public float GetNormalizedSpeed()
+    {
+        return currentSpeed / maxRotationSpeed;
+    }
+
+    public void LockWindmillSpeed()
+    {
+        isLocked = true;
+        if (speedSlider != null)
+        {
+            speedSlider.interactable = false;
+        }
+        Debug.Log($"Windmill speed locked at: {currentSpeed}");
+    }
+
+    public void UnlockWindmillSpeed()
+    {
+        isLocked = false;
+        if (speedSlider != null)
+        {
+            speedSlider.interactable = true;
+        }
+        Debug.Log("Windmill speed unlocked.");
+    }
+
+    public void SetSpeed(float speed)
+    {
+        currentSpeed = Mathf.Clamp(speed, 0f, maxRotationSpeed);
         if (speedSlider != null)
         {
             speedSlider.value = Mathf.Round(currentSpeed);
         }
-
-        // Control light intensity based on speed
-        if (lampLight != null)
-        {
-            lampLight.intensity = Mathf.Lerp(0f, maxLightIntensity, speedSlider.value / 255f);
-        }
     }
 
-    // New method to return normalized speed (0 to 1)
-    public float GetNormalizedSpeed()
+    public float GetCurrentSpeed()
     {
-        return currentSpeed / maxRotationSpeed; // Normalize speed between 0 and 1
+        return currentSpeed;
     }
 }
