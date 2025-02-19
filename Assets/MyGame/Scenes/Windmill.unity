@@ -4236,6 +4236,7 @@ MonoBehaviour:
   maxRotationSpeed: 255
   acceleration: 50
   deceleration: 30
+  windmillRotationScript: {fileID: 1511901403}
 --- !u!114 &1511901403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4245,12 +4246,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1511901400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d23d4b8283edb408e60dcaf829f8db, type: 3}
+  m_Script: {fileID: 11500000, guid: 56566723e45d8e843a38c0260e715b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedSpeed: 0
-  isLocked: 0
-  windmillDynamicSpeed: {fileID: 0}
+  rotationSpeed: 0
 --- !u!1 &1519996931
 GameObject:
   m_ObjectHideFlags: 0
@@ -4542,6 +4541,7 @@ MonoBehaviour:
   maxRotationSpeed: 255
   acceleration: 50
   deceleration: 30
+  windmillRotationScript: {fileID: 1558781131}
 --- !u!114 &1558781131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4551,12 +4551,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558781128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d23d4b8283edb408e60dcaf829f8db, type: 3}
+  m_Script: {fileID: 11500000, guid: 56566723e45d8e843a38c0260e715b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedSpeed: 0
-  isLocked: 0
-  windmillDynamicSpeed: {fileID: 0}
+  rotationSpeed: 0
 --- !u!1 &1572051470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6363,6 +6361,7 @@ MonoBehaviour:
   maxRotationSpeed: 255
   acceleration: 50
   deceleration: 30
+  windmillRotationScript: {fileID: 2129420143}
 --- !u!114 &2129420143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6372,12 +6371,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2129420140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d23d4b8283edb408e60dcaf829f8db, type: 3}
+  m_Script: {fileID: 11500000, guid: 56566723e45d8e843a38c0260e715b97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedSpeed: 0
-  isLocked: 0
-  windmillDynamicSpeed: {fileID: 0}
+  rotationSpeed: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

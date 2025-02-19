@@ -86,6 +86,20 @@ public class WindmillGameManager : MonoBehaviour
                 windmillSliders[index].interactable = false;
             }
 
+            // Sperre die Geschwindigkeit der Windmühle
+            windmillScripts[index].LockWindmillSpeed();
+
+            // Synchronisiere die Geschwindigkeit mit dem Rotations-Skript
+            if (windmillScripts[index] != null)
+            {
+                float currentSpeed = windmillScripts[index].GetCurrentSpeed();
+                WindmillRotationConstantSpeed rotationScript = windmills[index].GetComponentInChildren<WindmillRotationConstantSpeed>();
+                if (rotationScript != null)
+                {
+                    rotationScript.SetRotationSpeed(currentSpeed);  // Setze die Geschwindigkeit auf die aktuelle Windmühlengeschwindigkeit
+                }
+            }
+
             currentIndex++;
             Debug.Log($"Neuer currentIndex: {currentIndex}");
 
@@ -98,6 +112,7 @@ public class WindmillGameManager : MonoBehaviour
             EnableCurrentWindmill();
         }
     }
+
 
     private void UpdateColor()
     {

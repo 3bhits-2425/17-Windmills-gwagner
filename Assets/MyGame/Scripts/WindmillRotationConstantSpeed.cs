@@ -3,20 +3,16 @@ using UnityEngine;
 public class WindmillRotationConstantSpeed : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 100f; // Speed of rotation
-    private bool isRotating = false; // Toggle for rotation
 
     private void Update()
     {
-        // Check if Space key is pressed to toggle rotation
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isRotating = !isRotating;
-        }
+        // Die Rotation läuft immer weiter mit der Geschwindigkeit von rotationSpeed
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
+    }
 
-        // Rotate the rotors if enabled
-        if (isRotating)
-        {
-            transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
-        }
+    // Methode zum Setzen der Rotationsgeschwindigkeit, die vom WindmillDynamicSpeed-Skript aufgerufen wird
+    public void SetRotationSpeed(float speed)
+    {
+        rotationSpeed = speed; // Setze die Rotationsgeschwindigkeit auf den Wert, der festgelegt wurde
     }
 }
