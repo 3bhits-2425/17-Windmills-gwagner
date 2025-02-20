@@ -552,8 +552,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190045204}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.045532, y: 0.6247067, z: 3.1570404}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.0455317, y: 0.62470675, z: 3.1570406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1324,13 +1324,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   windmills:
-  - {fileID: 2129420140}
-  - {fileID: 1511901400}
-  - {fileID: 1558781128}
-  windmillSliders:
-  - {fileID: 100074321}
-  - {fileID: 1987711508}
-  - {fileID: 1113678205}
+  - {fileID: 1660411938}
+  - {fileID: 190045204}
+  - {fileID: 1492957449}
   colorTarget: {fileID: 2014968995}
 --- !u!1 &453248160
 GameObject:
@@ -5535,7 +5531,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -202, y: -166}
+  m_AnchoredPosition: {x: -202, y: -166.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932199249
@@ -5821,8 +5817,8 @@ Transform:
   m_GameObject: {fileID: 2014968995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.514753, y: -1.51, z: 1.49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.67, y: -1.51, z: 7}
+  m_LocalScale: {x: 4.5019, y: 4.5019, z: 0.9235198}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

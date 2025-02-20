@@ -11,7 +11,6 @@ public class WindmillDynamicSpeed : MonoBehaviour
     [SerializeField] private float deceleration = 30f;
     private float currentSpeed = 0f;
     private bool isLocked = false;
-
     // Wir fügen hier eine Referenz zum WindmillRotationConstantSpeed-Skript hinzu
     [SerializeField] private WindmillRotationConstantSpeed windmillRotationScript;
 
