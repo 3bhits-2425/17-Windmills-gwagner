@@ -2,11 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class WindmillGameManager : MonoBehaviour
+public class WindmillManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] windmills;
     [SerializeField] private GameObject colorTarget;
-
     private List<Button> lockButtons = new List<Button>();
     private List<Slider> windmillSliders = new List<Slider>();
     private List<WindmillDynamicSpeed> windmillScripts = new List<WindmillDynamicSpeed>();
